@@ -1,0 +1,30 @@
+services:
+  database:
+    container_name: postgres_with_postgis
+    image: postgis/postgis:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    ports:
+      - '5444:5432'
+    volumes:
+      - data:/var/lib/postgresql/data
+
+  pgadmin:
+    container_name: pgadmin4_nestjs
+    image: dpage/pgadmin4:latest
+    restart: always
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_MAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PW}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION=True
+      - PGADMIN_CONFIG_CONSOLE_LOG_LEVEL=10
+    ports:
+      - '5488:80'
+
+volumes:
+  data:
+    name: data-postgis16-data

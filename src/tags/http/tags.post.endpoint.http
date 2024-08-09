@@ -1,0 +1,10 @@
+POST http://localhost:3000/tags
+Content-Type: application/json
+
+{
+  "name": "NestJS Programming",
+  "slug": "nestjs-programming",
+  "description": "NestJS basics to advanced step-by-step...",
+  "schema": "{\"isActive\": false, \"onReview\": true}",
+  "featuredImageUrl": "http://gravatar.com/profile/29292929/images/image1.jpg"
+}

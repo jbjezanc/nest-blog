@@ -1,0 +1,30 @@
+{{
+  // Pre-request script to create a valid ISO 8601 date string without timezone
+  const date = new Date();
+  
+  // Create an ISO 8601 string without timezone
+  const dateStringWithoutTimezone = date.toISOString().slice(0, 19);
+  
+  // Export as a string
+  exports.publishOn = `"${dateStringWithoutTimezone}"`;
+}}
+
+
+POST http://localhost:3000/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjgsImVtYWlsIjoibWFya0Bkb2UuY29tIiwiaWF0IjoxNzIyODcwMDc0LCJleHAiOjE3MjI4NzM2NzQsImF1ZCI6ImxvY2FsaG9zdDozMDAwIiwiaXNzIjoibG9jYWxob3N0OjMwMDAifQ.YNtifAe_VU2NUXcQgOZ6wpRov3bslB-cLhyvPEKzXS0
+
+{
+  "title": "What's new with PostgreSQL",
+  "postType": "post",
+  "slug": "new-with-postgresql",
+  "status": "draft",
+  "content": "Sample content",
+  "schema": "{ \r\n \"@context\": \"https:\/\/schema.org\",\r\n \"@type\": \"Person\"\r\n }",
+  "featuredImageUrl": "http://gravatar.com/profile/29292929/images/image1.jpg",
+  "publishOn": {{publishOn}},
+  "metaOptions": {
+    "metaValue": "{\"menuEnabled\": true, \"footerActive\": false}"
+  },
+  "tags": [10]
+}

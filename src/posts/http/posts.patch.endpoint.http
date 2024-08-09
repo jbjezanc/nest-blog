@@ -1,0 +1,33 @@
+PATCH http://localhost:3000/posts
+Content-Type: application/json
+
+{
+  "id": 1234,
+  "postType": "garbage"
+}
+
+
+PATCH http://localhost:3000/posts
+Content-Type: application/json
+
+{
+  "id": 12,
+  "title": "What's new with TypeScript",
+  "postType": "post",
+  "slug": "new-with-typescript",
+  "status": "draft",
+  "content": "Sample content UPDATED",
+  "schema": "{ \r\n \"@context\": \"https:\/\/schema.org\",\r\n \"@type\": \"Post\"\r\n }",
+  "featuredImageUrl": "http://gravatar.com/profile/2222222/images/image2.jpg",
+  "publishOn": "2024-08-01T07:46:32+0000",
+  "tags": [9, 10]
+  // , // not included
+  // "metaOptions": [
+  //   {
+  //     "key": "testKey",
+  //     "value": 20
+  //   }
+  // ]
+}
+
+
