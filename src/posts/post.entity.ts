@@ -13,7 +13,7 @@ import { MetaOption } from 'src/meta-options/meta-option.entity';
 import { User } from 'src/users/user.entity';
 import { Tag } from 'src/tags/tag.entity';
 
-@Entity({ name: 'posts' })
+@Entity()
 export class Post {
   @PrimaryGeneratedColumn()
   id: number;
