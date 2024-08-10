@@ -47,5 +47,9 @@ export function appCreate(app: INestApplication): void {
   });
 
   // Enable cors
-  app.enableCors();
+  app.enableCors({
+    origin: '*',
+    methods: 'GET, POST, PUT, DELETE, OPTIONS',
+    allowedHeaders: 'Content-Type, Authorization',
+  });
 }
