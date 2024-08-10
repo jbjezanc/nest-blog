@@ -6,7 +6,7 @@ services:
     environment:
       - POSTGRES_USER=${DATABASE_USER}
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
-      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_DB=${DATABASE_NAME}
     ports:
       - '5444:5432'
     volumes:
@@ -19,7 +19,7 @@ services:
     environment:
       - PGADMIN_DEFAULT_EMAIL=${PGADMIN_MAIL}
       - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PW}
-      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_DB=${DATABASE_NAME}
       - PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION=True
       - PGADMIN_CONFIG_CONSOLE_LOG_LEVEL=10
     ports:
