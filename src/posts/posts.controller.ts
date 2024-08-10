@@ -12,7 +12,12 @@ import {
   Req,
 } from '@nestjs/common';
 import { PostsService } from './providers/posts.service';
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 import { CreatePostDto } from './dtos/create-post.dto';
 import { PatchPostDto } from './dtos/patch-post.dto';
 import { GetPostsDto } from './dtos/get-posts.dto';
@@ -23,6 +28,7 @@ import { ActiveUserData } from 'src/auth/interfaces/active-user-data.interface';
 
 @Controller('posts')
 @ApiTags('Posts')
+@ApiBearerAuth()
 export class PostsController {
   /**
    * Injecting PostsService
