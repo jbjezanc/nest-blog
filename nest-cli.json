@@ -12,7 +12,8 @@
       },
       {
         "include": "migrations/**/*",
-        "outDir": "dist/migrations"
+        "outDir": "dist/src/",
+        "watchAssets": true
       }
     ]
   }
