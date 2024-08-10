@@ -9,12 +9,8 @@
         "include": "./mail/templates",
         "outDir": "dist/",
         "watchAssets": true
-      },
-      {
-        "include": "migrations/**/*",
-        "outDir": "dist/src/",
-        "watchAssets": true
       }
-    ]
+    ],
+    "watchAssets": true
   }
 }
