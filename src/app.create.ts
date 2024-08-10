@@ -30,6 +30,7 @@ export function appCreate(app: INestApplication): void {
       'https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt',
     )
     .addServer('http://localhost:3000')
+    .addBearerAuth()
     .setVersion('1.0')
     .build();
   // Instantiate Document
