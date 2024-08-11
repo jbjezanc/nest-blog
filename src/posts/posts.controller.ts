@@ -26,9 +26,9 @@ import { REQUEST_USER_KEY } from 'src/auth/constants/auth.constants';
 import { ActiveUser } from 'src/auth/decorators/active-user.decorator';
 import { ActiveUserData } from 'src/auth/interfaces/active-user-data.interface';
 
+@ApiBearerAuth()
 @Controller('posts')
 @ApiTags('Posts')
-@ApiBearerAuth()
 export class PostsController {
   /**
    * Injecting PostsService

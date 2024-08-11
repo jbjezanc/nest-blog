@@ -8,7 +8,9 @@ import {
 } from '@nestjs/common';
 import { CreateTagDto } from './dtos/create-tag.dto';
 import { TagsService } from './providers/tags.service';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
+@ApiBearerAuth()
 @Controller('tags')
 export class TagsController {
   constructor(private readonly tagsService: TagsService) {}
